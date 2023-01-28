@@ -40,8 +40,14 @@ const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion
                   </Grid>
                   <RightContainer item lg={8} md={8} sm={8} xs={12}>
                     <Typography>{product.title.longTitle}</Typography>
-                    <Typography style={{marginTop: 5, color: "#878787", fontSize: 14}}>8 Ratings & 1 Reviews</Typography>
-                    <Box component="span"><img src={fassured} alt="" style={{width: 77, marginLeft: 20}}/></Box>
+                    <Typography style={{marginTop: 5, color: "#878787", fontSize: 14}}>8 Ratings & 1 Reviews
+                      <Box component="span"><img src={fassured} alt="" style={{width: 77, marginLeft: 20}}/></Box>
+                    </Typography>
+                    <Typography>
+                      <Box component="span" style={{fontSize: 28}}>₹{product.price.cost}</Box>&nbsp;&nbsp;&nbsp;
+                      <Box component="span" style={{color: "#878787"}}><strike>₹{product.price.mrp}</strike></Box>&nbsp;&nbsp;&nbsp;
+                      <Box component="span" style={{color: "#388e3c"}}>{product.price.discount}</Box>
+                    </Typography>
                   </RightContainer>
               </Container>
         }
