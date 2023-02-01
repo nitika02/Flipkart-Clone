@@ -39,7 +39,7 @@ const ProductDetail = ({product}) => {
                 <Box component="span" style={{fontSize: 28}}>₹{product.price.cost}</Box>&nbsp;&nbsp;&nbsp;
                 <Box component="span" style={{color: "#878787"}}><strike>₹{product.price.mrp}</strike></Box>&nbsp;&nbsp;&nbsp;
                 <Box component="span" style={{color: "#388e3c"}}>{product.price.discount}</Box>
-        </Typography>
+            </Typography>
         <Typography>Available Offers</Typography>
         <SmallText>
             <Typography><StyledBadge />Get extra 20% off upto ₹50 on 1 item</Typography>
