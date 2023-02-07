@@ -51,6 +51,7 @@ const ActionItem = ({product}) => {
     navigate("/cart")
   }
 
+
   return (
     <LeftContainer>
         <Box style={{padding: "15px 20px", border: "1px solid #f0f0f0", width: "90%"}}>

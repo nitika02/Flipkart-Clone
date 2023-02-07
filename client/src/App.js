@@ -5,6 +5,8 @@ import DataProvider from './context/DataProvider';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import DetailView from './components/details/DetailView';
 import Cart from './components/cart/Cart';
+import LastFooter from './components/footer/LastFooter';
+import GoToTop from './components/GoToTop/GoToTop';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </Box>
+        <LastFooter />
+        <GoToTop />
       </BrowserRouter>
     </DataProvider>
   );

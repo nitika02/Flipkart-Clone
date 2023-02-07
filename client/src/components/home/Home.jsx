@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Slide from './Slide'
 import MidSlide from './MidSlide'
 import MidSection from './MidSection'
+import FirstFooter from '../footer/FirstFooter'
+import MidFooter from '../footer/MidFooter'
 
 const Component = styled(Box)`
     padding: 10px 10px;
@@ -38,7 +40,8 @@ const Home = () => {
             <Slide products={products} title="Top Deals on Accessories" timer={false}/>
             <Slide products={products} title="Season's top picks" timer={false}/>
         </Component>
-        
+        <FirstFooter />
+        <MidFooter />
     </>
   )
 }
