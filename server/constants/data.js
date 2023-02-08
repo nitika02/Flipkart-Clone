@@ -124,5 +124,23 @@ export const products = [
         description: 'Let music brighten up your mood anytime, anywhere with the boAt 235v2 Fast Charging Bluetooth Headset. This Bluetooth headset features a Call Vibration Alert, a Fast Charging Technology, and Easy Access Controls to listen to and manage your favorite music with ease.',
         discount: 'Minimum 50% Off', 
         tagline: 'Grab Now!' 
-    }
+    },
+    { 
+        id: 'product8',
+        url: 'https://rukminim1.flixcart.com/image/312/312/kokdci80/dslr-camera/v/e/x/z-24-200mm-z5-nikon-original-imag2zuekuxgxsgg.jpeg?q=70', 
+        detailUrl: 'https://rukminim1.flixcart.com/image/416/416/kokdci80/dslr-camera/v/e/x/z-24-200mm-z5-nikon-original-imag2zuekuxgxsgg.jpeg?q=70',
+        title: {
+            shortTitle: 'Camera',
+            longTitle: 'NIKON Z5 Mirrorless Camera 24-200 mm  (Black)'
+        }, 
+        price: {
+            mrp: 169999,
+            cost: 159999,
+            discount: '5%'
+        },
+        quantity: 1,
+        description: '1 Camera, Lens, Battery, Rechargeable Battery, Cap, USB, Strap',
+        discount: 'Extra 10% Off', 
+        tagline: 'Deal of the day' 
+    },
 ];

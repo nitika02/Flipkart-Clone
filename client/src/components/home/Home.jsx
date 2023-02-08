@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import Banner from './Banner'
 import Navbar from './Navbar'
-import {Box, styled} from "@mui/material"
+import {Box, Dialog, styled} from "@mui/material"
 import { getProducts } from '../../redux/actions/productAction'
 import { useDispatch, useSelector } from 'react-redux'
 import Slide from './Slide'
@@ -9,6 +9,7 @@ import MidSlide from './MidSlide'
 import MidSection from './MidSection'
 import FirstFooter from '../footer/FirstFooter'
 import MidFooter from '../footer/MidFooter'
+import Chatbot from '../Chatbot/Chatbot'
 
 const Component = styled(Box)`
     padding: 10px 10px;
@@ -16,7 +17,7 @@ const Component = styled(Box)`
 `
 
 const Home = () => {
-
+  const [open, setOpen] = useState(false)
   const {products} = useSelector(state => state.getProducts)
   
   const dispatch = useDispatch()
@@ -24,6 +25,14 @@ const Home = () => {
   useEffect(() => {
     dispatch(getProducts())
   }, [dispatch])
+
+  const handleOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
 
   return (
     <>
@@ -42,6 +51,18 @@ const Home = () => {
         </Component>
         <FirstFooter />
         <MidFooter />
+        <img src="https://assets.gallabox.com/gb-home/footer_robot.gif" alt="" onClick={handleOpen} style={{
+          width: "120px",
+          cursor: "pointer",
+          height: "120px",
+          position: "fixed",
+          zIndex: "1000",
+          bottom: "10%",
+          right: "8%",
+        }} />
+        <Dialog open={open} onClose={handleClose}>
+          <Chatbot />
+        </Dialog>
     </>
   )
 }
