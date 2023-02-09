@@ -3,12 +3,14 @@ import React from 'react'
 import { navData } from '../../constants/data'
 
 const Component = styled(Box)(({theme}) => ({
-    display: "flex",
+    display: "grid",
+    gridTemplateColumns: "repeat(9, 1fr)",
     margin: "55px 130px 0 130px",
     justifyContent: "space-between",
     overflow: "hidden",
     [theme.breakpoints.down("lg")] : {
-        margin: 0
+        margin: 0,
+        gridTemplateColumns: "repeat(5, 1fr)"
     }
 }))
 const Container = styled(Box)`

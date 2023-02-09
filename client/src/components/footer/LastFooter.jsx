@@ -5,6 +5,7 @@ const LastFooter = () => {
   return (
     <>
         <div className='last-footer-section'>
+            <div className='flex2'>
             <div className='last-footer-div'>
                 <p>ABOUT</p>
                 <ul>
@@ -50,6 +51,8 @@ const LastFooter = () => {
                     <li>YouTube</li>
                 </ul>
             </div>
+            </div>
+            <div className='flex'>
             <div className='last-footer-div mail-us-div'>
                 <p>Mail Us:</p>
                 <ul>
@@ -73,6 +76,7 @@ const LastFooter = () => {
                     <li>CIN : U51109KA2012PTC066107</li>
                     <li>Telephone: <span style={{color: "#2874f0"}}>044-45614700</span></li>
                 </ul>
+            </div>
             </div>
         </div>
         <div className='last-footer-section2'>

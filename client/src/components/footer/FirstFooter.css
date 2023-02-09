@@ -99,3 +99,20 @@
 .last-footer-payment {
     display: block;
 }
+.flex {
+    display: flex;
+}
+.flex2 {
+    display: flex;
+}
+@media (max-width: 1100px) {
+    .last-footer-section {
+        display: flex;
+        flex-direction: column;
+    }
+    .mail-us-div {
+        padding-left: 0px;
+        border: none;
+        margin-left: 0px;
+    }
+}
