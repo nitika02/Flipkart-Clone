@@ -50,7 +50,7 @@ const Cart = () => {
     navigate("/")
     window.location.reload(false);
   }
-  const price = localStorage.getItem("price")
+  const priceL = localStorage.getItem("price")
 
   return (
     <>
@@ -68,7 +68,7 @@ const Cart = () => {
             }
             <ButtonWrapper>
             <StripeCheckout 
-              amount={price * 100}
+              amount={priceL * 100}
               shippingAddress
               token={tokenHandler}
               stripeKey="pk_test_51MZ9bISGTZPRy0ITwN3x8ZkDXgbVWROwPgJh7hidWbEOY03AszvFyJAYDTK6d9PNOMolou1tfR3zfgl45YzJ1GXT00uvziX3YW"
