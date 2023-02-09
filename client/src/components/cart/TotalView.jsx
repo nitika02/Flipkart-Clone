@@ -46,6 +46,7 @@ const TotalView = ({cartItems}) => {
 
     useEffect(() => {
         totalAmount()
+        localStorage.setItem("price", (price-discount+40))
     }, [cartItems])
 
   return (

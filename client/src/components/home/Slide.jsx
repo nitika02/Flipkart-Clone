@@ -39,12 +39,16 @@ const DealText = styled(Typography)`
     margin-right: 25px;
     line-height: 32px;
 `
-const ViewAllButton = styled(Button)`
+const ViewAllButton = styled(Link)`
     margin-left: auto;
     background-color: #2874f0;
     border-radius: 2px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
+    text-decoration : none;
+    color: #fff;
+    padding: 10px;
+    
 `
 const Image = styled("img")({
     width: "auto",
@@ -73,7 +77,7 @@ const Slide = ({products, title, timer}) => {
                                 <Countdown date={Date.now() + 5.04e+7} renderer={renderer}/>
                             </Timer>
                     }
-                    <ViewAllButton variant="contained" color="primary">View All</ViewAllButton>
+                    <ViewAllButton to="/product" variant="contained" color="primary">View All</ViewAllButton>
                 </Deal>
                 <Divider></Divider>
                 <Carousel

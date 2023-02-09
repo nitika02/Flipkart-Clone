@@ -7,6 +7,7 @@ import DetailView from './components/details/DetailView';
 import Cart from './components/cart/Cart';
 import LastFooter from './components/footer/LastFooter';
 import GoToTop from './components/GoToTop/GoToTop';
+import Product from './components/products/Product';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<DetailView />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/product" element={<Product />} />
           </Routes>
         </Box>
         <LastFooter />
