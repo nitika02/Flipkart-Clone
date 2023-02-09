@@ -8,7 +8,7 @@ const Product = () => {
     const dispatch = useDispatch();
     const {products} = useSelector(state => state.getProducts)
     const [data, setData] = useState([])
-    dispatch(getProducts())
+    // dispatch(getProducts())
     
     useEffect(() => {
         console.log(products)
@@ -41,7 +41,7 @@ const Product = () => {
             <h4>Grocery</h4>
         </div>
         <div className='sort'>
-            <p>Sort By</p>
+            <p onClick={() => setData(data)}>Sort By</p>
             <p onClick={sortLtoH}>Price -- Low to High</p>
             <p onClick={sortHtoL}>Price -- High to Low</p>
         </div>
