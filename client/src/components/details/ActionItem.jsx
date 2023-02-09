@@ -8,6 +8,7 @@ import {addToCart} from "../../redux/actions/cartActions"
 import { useState } from 'react';
 import { payUsingPaytm } from '../../service/api';
 import { post } from '../../utils/paytm';
+import StripeCheckout from "react-stripe-checkout"
 
 const LeftContainer = styled(Box)(({theme}) => ({
    minWidth: "40%",
@@ -52,14 +53,18 @@ const ActionItem = ({product}) => {
     dispatch(addToCart(id, quantity))
     navigate("/cart")
   }
-  const buyNow = () => {
-    let response = payUsingPaytm({ amount: 500, email: "garg.nitika1998@gmail.com"})
-    let information = {
-      action: "https://securegw-stage.paytm.in/order/process",
-      params: response
-    }
-    post(information)
-    localStorage.setItem("buy-price", product.price.cost)
+  // const buyNow = () => {
+  //   let response = payUsingPaytm({ amount: 500, email: "garg.nitika1998@gmail.com"})
+  //   let information = {
+  //     action: "https://securegw-stage.paytm.in/order/process",
+  //     params: response
+  //   }
+  //   post(information)
+  //   localStorage.setItem("buy-price", product.price.cost)
+  // }
+  const tokenHandler = (token) => {
+    console.log(token)
+    navigate("/")
   }
 
 
@@ -69,7 +74,14 @@ const ActionItem = ({product}) => {
           <Image src={product.detailUrl} alt="" />
         </Box>
         <StyledButton variant="contained" onClick={() => addItemToCart()} style={{marginRight: 10, background: "#ff9f00"}}><ShoppingCartIcon />Add to Cart</StyledButton>
-        <StyledButton variant="contained" onClick={() => buyNow()} style={{background: "#fb541b"}}><FlashOnIcon />Buy Now</StyledButton>
+        <StripeCheckout 
+          amount={product.price.cost * 100}
+          shippingAddress
+          token={tokenHandler}
+          stripeKey="pk_test_51MZ9bISGTZPRy0ITwN3x8ZkDXgbVWROwPgJh7hidWbEOY03AszvFyJAYDTK6d9PNOMolou1tfR3zfgl45YzJ1GXT00uvziX3YW"
+          currency="INR"
+        >
+          <StyledButton variant="contained" style={{background: "#fb541b"}}><FlashOnIcon />Buy Now</StyledButton></StripeCheckout>
     </LeftContainer>
   )
 }

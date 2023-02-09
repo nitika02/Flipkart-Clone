@@ -4,6 +4,8 @@ import {Box, Grid, Typography, styled, Button} from "@mui/material"
 import CartItem from './CartItem'
 import TotalView from './TotalView'
 import EmptyCart from './EmptyCart'
+import StripeCheckout from 'react-stripe-checkout'
+import { useNavigate } from 'react-router-dom'
 
 const Container = styled(Grid)(({theme}) => ({
   padding: "30px 135px",
@@ -42,6 +44,14 @@ const LeftComponent = styled(Grid)(({ theme }) => ({
 const Cart = () => {
 
   const {cartItems } = useSelector(state => state.cart)
+  const navigate = useNavigate()
+  const tokenHandler = (token) => {
+    console.log(token)
+    navigate("/")
+    window.location.reload(false);
+  }
+  const price = localStorage.getItem("price")
+
   return (
     <>
       {
@@ -57,7 +67,15 @@ const Cart = () => {
               ))
             }
             <ButtonWrapper>
+            <StripeCheckout 
+              amount={price * 100}
+              shippingAddress
+              token={tokenHandler}
+              stripeKey="pk_test_51MZ9bISGTZPRy0ITwN3x8ZkDXgbVWROwPgJh7hidWbEOY03AszvFyJAYDTK6d9PNOMolou1tfR3zfgl45YzJ1GXT00uvziX3YW"
+              currency="INR"
+            >
               <StyledButton>Place Order</StyledButton>
+            </StripeCheckout>  
             </ButtonWrapper>
           </LeftComponent>
           <Grid item lg={3} md={3} sm={12} xs={12}>
