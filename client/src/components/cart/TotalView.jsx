@@ -32,6 +32,7 @@ const Discount = styled(Typography)`
 const TotalView = ({cartItems}) => {
     const [price, setPrice] = useState(0);
     const [discount, setDiscount] = useState(0);
+    let totalPrice;
 
     const totalAmount = () => {
         let price = 0;
@@ -39,14 +40,16 @@ const TotalView = ({cartItems}) => {
         cartItems.map(item => {
             price +=item.price.mrp
             discount +=(item.price.mrp - item.price.cost)
+            totalPrice = price - discount + 40
     })
         setPrice(price);
         setDiscount(discount)
     }
+     
 
     useEffect(() => {
         totalAmount()
-        localStorage.setItem("price", (price-discount+40))
+        localStorage.setItem("price", totalPrice)
     }, [cartItems])
 
   return (

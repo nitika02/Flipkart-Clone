@@ -70,3 +70,12 @@
 .product-item-price p {
     margin-right: 10px;
 }
+.sort {
+    display: flex;
+    margin-left: 80px;
+    margin-bottom: -20px;
+}
+.sort p {
+    margin-right: 20px;
+    cursor: pointer;
+}
