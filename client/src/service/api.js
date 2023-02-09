@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:8000"
+const URL = "https://ruby-tame-crayfish.cyclic.app"
 
 export const authenticateSignUp = async (data) => {
     try {
